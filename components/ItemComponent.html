@@ -1,0 +1,835 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/items/item.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-item</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>
+      .items {
+        padding: 16px;
+      }
+      .card-container {
+        color: #e64a19;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ,
+      .item-card {
+        width: 40%;
+        margin: 0 auto;
+      }
+
+      mat-card {
+        margin: 10px;
+        padding: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        height: 80%;
+
+      }
+
+      .search-btn {
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 15px;
+      }
+      a {
+        text-decoration: none;
+      }
+    </code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;search-btn&quot;&gt;
+  &lt;mat-form-field class&#x3D;&quot;item-card&quot; appearance&#x3D;&quot;fill&quot; fxFlex&#x3D;&quot;75&quot;&gt;
+    &lt;mat-label&gt;Search for items &lt;/mat-label&gt;
+    &lt;input matInput [(ngModel)]&#x3D;&quot;searchItems&quot; /&gt;
+    &lt;mat-icon matSuffix&gt;search&lt;/mat-icon&gt;
+    &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
+  &lt;/mat-form-field&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;items&quot; *ngIf&#x3D;&quot;items&quot;&gt;
+  &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap&#x3D;&quot;16px grid&quot;&gt;
+    &lt;div
+      id&#x3D;&quot;mat-card-items&quot;
+      fxFlex&#x3D;&quot;33%&quot;
+      fxFlex.xs&#x3D;&quot;100%&quot;
+      fxFlex.sm&#x3D;&quot;50%&quot;
+      *ngFor&#x3D;&quot;let item of items | searchText: searchItems &quot;
+    &gt;
+      &lt;a routerLink&#x3D;&quot;/items/{{ item._id}}&quot;&gt;
+
+        &lt;mat-card class&#x3D;&quot;item-card mat-elevation-z4&quot;&gt;
+          &lt;mat-card-header class&#x3D;&quot;card-container&quot;&gt;
+
+
+
+          &lt;mat-card-title&gt;{{ item.postType }}&lt;/mat-card-title&gt;
+            &lt;mat-card-subtitle&gt;{{ item.itemType }}&lt;/mat-card-subtitle&gt;
+          &lt;/mat-card-header&gt;
+          &lt;mat-card-content&gt;
+            &lt;div class&#x3D;&quot;post-item&quot;&gt;
+              &lt;div class&#x3D;&quot;item-image&quot;&gt;
+                &lt;img
+                  mat-card-image
+                  src&#x3D;&quot;{{ item.imageUrl }}&quot;
+                  alt&#x3D;&quot;laptop&quot;
+                /&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;h3&gt;{{ item.description }}&lt;/h3&gt;
+          &lt;/mat-card-content&gt;
+          &lt;mat-card-footer&gt;
+          &lt;/mat-card-footer&gt;
+        &lt;/mat-card&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#items" >items</a>
+                            </li>
+                            <li>
+                                <a href="#searchItems" >searchItems</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#compare" >compare</a>
+                            </li>
+                            <li>
+                                <a href="#getAllItems" >getAllItems</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(itemService: <a href="../injectables/ItemService.html" target="_self">ItemService</a>, mapService: <a href="../injectables/MapService.html" target="_self">MapService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/items/item.component.ts:100</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>itemService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ItemService.html" target="_self" >ItemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MapService.html" target="_self" >MapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compare"></a>
+                    <span class="name">
+                        <span ><b>compare</b></span>
+                        <a href="#compare"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compare(a: <a href="../interfaces/Item.html" target="_self">Item</a>, b: <a href="../interfaces/Item.html" target="_self">Item</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/items/item.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+                                    <td>
+                                                <code><a href="../interfaces/Item.html" target="_self" >Item</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+                                    <td>
+                                                <code><a href="../interfaces/Item.html" target="_self" >Item</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>1 | -1 | 0</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllItems"></a>
+                    <span class="name">
+                        <span ><b>getAllItems</b></span>
+                        <a href="#getAllItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllItems()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/items/item.component.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/items/item.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="items"></a>
+                    <span class="name">
+                        <span ><b>items</b></span>
+                        <a href="#items"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Item.html" target="_self" >Item[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/items/item.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchItems"></a>
+                    <span class="name">
+                        <span ><b>searchItems</b></span>
+                        <a href="#searchItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/items/item.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Item } from &#x27;./item.model&#x27;;
+import { ItemService } from &#x27;./item.service&#x27;;
+import { MapService } from &#x27;./map.service&#x27;;
+
+@Component({
+  selector: &#x27;app-item&#x27;,
+  template: &#x60;
+    &lt;div class&#x3D;&quot;search-btn&quot;&gt;
+      &lt;mat-form-field class&#x3D;&quot;item-card&quot; appearance&#x3D;&quot;fill&quot; fxFlex&#x3D;&quot;75&quot;&gt;
+        &lt;mat-label&gt;Search for items &lt;/mat-label&gt;
+        &lt;input matInput [(ngModel)]&#x3D;&quot;searchItems&quot; /&gt;
+        &lt;mat-icon matSuffix&gt;search&lt;/mat-icon&gt;
+        &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;items&quot; *ngIf&#x3D;&quot;items&quot;&gt;
+      &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap&#x3D;&quot;16px grid&quot;&gt;
+        &lt;div
+          id&#x3D;&quot;mat-card-items&quot;
+          fxFlex&#x3D;&quot;33%&quot;
+          fxFlex.xs&#x3D;&quot;100%&quot;
+          fxFlex.sm&#x3D;&quot;50%&quot;
+          *ngFor&#x3D;&quot;let item of items | searchText: searchItems &quot;
+        &gt;
+          &lt;a routerLink&#x3D;&quot;/items/{{ item._id}}&quot;&gt;
+
+            &lt;mat-card class&#x3D;&quot;item-card mat-elevation-z4&quot;&gt;
+              &lt;mat-card-header class&#x3D;&quot;card-container&quot;&gt;
+
+
+
+              &lt;mat-card-title&gt;{{ item.postType }}&lt;/mat-card-title&gt;
+                &lt;mat-card-subtitle&gt;{{ item.itemType }}&lt;/mat-card-subtitle&gt;
+              &lt;/mat-card-header&gt;
+              &lt;mat-card-content&gt;
+                &lt;div class&#x3D;&quot;post-item&quot;&gt;
+                  &lt;div class&#x3D;&quot;item-image&quot;&gt;
+                    &lt;img
+                      mat-card-image
+                      src&#x3D;&quot;{{ item.imageUrl }}&quot;
+                      alt&#x3D;&quot;laptop&quot;
+                    /&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;h3&gt;{{ item.description }}&lt;/h3&gt;
+              &lt;/mat-card-content&gt;
+              &lt;mat-card-footer&gt;
+              &lt;/mat-card-footer&gt;
+            &lt;/mat-card&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &#x60;,
+  styles: [
+    &#x60;
+      .items {
+        padding: 16px;
+      }
+      .card-container {
+        color: #e64a19;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ,
+      .item-card {
+        width: 40%;
+        margin: 0 auto;
+      }
+
+      mat-card {
+        margin: 10px;
+        padding: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        height: 80%;
+
+      }
+
+      .search-btn {
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 15px;
+      }
+      a {
+        text-decoration: none;
+      }
+    &#x60;,
+  ],
+})
+export class ItemComponent implements OnInit {
+  items: Item[] &#x3D; [];
+  searchItems: string &#x3D; &#x27;&#x27;;
+  constructor(private itemService: ItemService,private mapService:MapService) {}
+
+  ngOnInit(): void {
+    this.getAllItems();
+  }
+
+  getAllItems() {
+    this.itemService.getItems().subscribe({
+      next: (result: Item[]) &#x3D;&gt; {
+        this.items &#x3D; result;
+        this.items.sort(this.compare);
+      },
+      error: (err: any) &#x3D;&gt; {
+        console.log(err);
+
+      },
+    });
+  }
+   compare( a:Item, b:Item ) {
+    if ( b.postType &lt; a.postType ){
+      return -1;
+    }
+    if ( b.postType &gt; a.postType ){
+      return 1;
+    }
+    return 0;
+
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-styleData">
+            <pre class="line-numbers"><code class="language-scss">
+      .items {
+        padding: 16px;
+      }
+      .card-container {
+        color: #e64a19;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ,
+      .item-card {
+        width: 40%;
+        margin: 0 auto;
+      }
+
+      mat-card {
+        margin: 10px;
+        padding: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        height: 80%;
+
+      }
+
+      .search-btn {
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 15px;
+      }
+      a {
+        text-decoration: none;
+      }
+    
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="search-btn">  <mat-form-field class="item-card" appearance="fill" fxFlex="75">    <mat-label>Search for items </mat-label>    <input matInput [(ngModel)]="searchItems" />    <mat-icon matSuffix>search</mat-icon>    <div class="spacer"></div>  </mat-form-field></div><div class="items" *ngIf="items">  <div fxLayout="row wrap" fxLayoutGap="16px grid">    <div      id="mat-card-items"      fxFlex="33%"      fxFlex.xs="100%"      fxFlex.sm="50%"      *ngFor="let item of items | searchText: searchItems "    >      <a routerLink="/items/{{ item._id}}">        <mat-card class="item-card mat-elevation-z4">          <mat-card-header class="card-container">          <mat-card-title>{{ item.postType }}</mat-card-title>            <mat-card-subtitle>{{ item.itemType }}</mat-card-subtitle>          </mat-card-header>          <mat-card-content>            <div class="post-item">              <div class="item-image">                <img                  mat-card-image                  src="{{ item.imageUrl }}"                  alt="laptop"                />              </div>            </div>            <h3>{{ item.description }}</h3>          </mat-card-content>          <mat-card-footer>          </mat-card-footer>        </mat-card>      </a>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddressAutoCompleteComponent', 'selector': 'app-autocomplete'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ItemComponent', 'selector': 'app-item'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MyItemComponent', 'selector': 'app-item'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

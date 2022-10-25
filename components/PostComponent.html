@@ -1,0 +1,1445 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  PostComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/items/post.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-post</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>
+
+      mat-stepper {
+        display: inline;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: 50px;
+      }
+      mat-radio-group {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      mat-form-field {
+        width: 40%;
+        padding: 10px;
+      }
+      .auto-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .stepper-btn {
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    </code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;mat-stepper orientation&#x3D;&quot;vertical&quot; [linear]&#x3D;&quot;true&quot; #stepper&gt;    &lt;mat-step [stepControl]&#x3D;&quot;itemDetailsFormGroup&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;itemDetailsFormGroup&quot;&gt;
+        &lt;ng-template matStepLabel&gt;Item Information&lt;/ng-template&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Item Type&lt;/mat-label&gt;
+          &lt;mat-select formControlName&#x3D;&quot;itemType&quot; placeholder&#x3D;&quot;Ex. Dog&quot; required&gt;
+            &lt;mat-option value&#x3D;&quot;Electronics&quot;&gt;Electronics&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Clothing&quot;&gt;Clothing&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Mobile&quot;&gt;Mobile&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;ID_Card&quot;&gt;ID Card&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Jewelry&quot;&gt;Jewelry&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Keys&quot;&gt;Keys&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Pet&quot;&gt;Pet&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Bags&quot;&gt;Bags&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Luggage&quot;&gt;Luggage&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Books&quot;&gt;Books&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Others&quot;&gt;Others&lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Post Type&lt;/mat-label&gt;
+          &lt;mat-select formControlName&#x3D;&quot;postType&quot; placeholder&#x3D;&quot;Ex. Dog&quot; required&gt;
+            &lt;mat-option value&#x3D;&quot;LOST&quot;&gt;LOST&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;FOUND&quot;&gt;FOUND&lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Description&lt;/mat-label&gt;
+          &lt;input
+            matInput
+            placeholder&#x3D;&quot;Ex. I found or lost my item ...&quot;
+            formControlName&#x3D;&quot;description&quot;
+            required
+          /&gt;
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Upload Image&lt;/mat-label&gt;
+          &lt;ngx-mat-file-input
+            formControlName&#x3D;&quot;imageUrl&quot;
+            required
+            (change)&#x3D;&quot;upload($event)&quot;
+            multiple
+          &gt;&lt;/ngx-mat-file-input&gt;
+          &lt;mat-icon matSuffix&gt;upload&lt;/mat-icon&gt;
+        &lt;/mat-form-field&gt;
+        &lt;div&gt;
+          &lt;button mat-raised-button color&#x3D;&quot;primary&quot; matStepperNext&gt;Next&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/mat-step&gt;
+
+    &lt;mat-step [stepControl]&#x3D;&quot;itemAddressFormGroup&quot;&gt;
+      &lt;form&gt;
+        &lt;ng-template matStepLabel&gt;Location of Lost/Found &lt;/ng-template&gt;
+        &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap.gt-lg&#x3D;&quot;16px grid&quot;&gt;
+          &lt;div fxFlex&#x3D;&quot;33%&quot; fxFlex.xs&#x3D;&quot;100%&quot; fxFlex.sm&#x3D;&quot;50%&quot;&gt;
+            &lt;app-autocomplete
+              class&#x3D;&quot;autocomplete&quot;
+              (locationChange)&#x3D;&quot;autocompleteChanged($event)&quot;
+            &gt;&lt;/app-autocomplete&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;button
+            mat-raised-button
+            color&#x3D;&quot;primary&quot;
+            matStepperPrevious
+            class&#x3D;&quot;stepper-btn&quot;
+          &gt;
+            Back
+          &lt;/button&gt;
+          &lt;button
+            mat-raised-button
+            color&#x3D;&quot;primary&quot;
+            matStepperNext
+            class&#x3D;&quot;stepper-btn&quot;
+          &gt;
+            Next
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/mat-step&gt;
+
+    &lt;mat-step&gt;
+      &lt;ng-template matStepLabel&gt;Done&lt;/ng-template&gt;
+      &lt;p&gt;You are almost done, click submit to Finish&lt;/p&gt;
+      &lt;div&gt;
+        &lt;button
+          mat-raised-button
+          color&#x3D;&quot;primary&quot;
+          matStepperPrevious
+          class&#x3D;&quot;stepper-btn&quot;
+        &gt;
+          Back
+        &lt;/button&gt;
+        &lt;button
+          *ngIf&#x3D;&quot;!submit&quot;
+          mat-raised-button
+          (click)&#x3D;&quot;postItem()&quot;
+          color&#x3D;&quot;accent&quot;
+          class&#x3D;&quot;stepper-btn&quot;
+        &gt;
+          Submit
+        &lt;/button&gt;
+        &lt;mat-progress-bar
+          mode&#x3D;&quot;indeterminate&quot;
+          *ngIf&#x3D;&quot;submit&quot;
+        &gt;&lt;/mat-progress-bar&gt;
+      &lt;/div&gt;
+    &lt;/mat-step&gt;
+  &lt;/mat-stepper&gt;</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#address" >address</a>
+                            </li>
+                            <li>
+                                <a href="#app_state" >app_state</a>
+                            </li>
+                            <li>
+                                <a href="#ITEM_TYPE" >ITEM_TYPE</a>
+                            </li>
+                            <li>
+                                <a href="#itemAddressFormGroup" >itemAddressFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#itemDetailsFormGroup" >itemDetailsFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#items" >items</a>
+                            </li>
+                            <li>
+                                <a href="#POST_TYPE" >POST_TYPE</a>
+                            </li>
+                            <li>
+                                <a href="#selectFiles" >selectFiles</a>
+                            </li>
+                            <li>
+                                <a href="#submit" >submit</a>
+                            </li>
+                            <li>
+                                <a href="#userInfoFormGroup" >userInfoFormGroup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#autocompleteChanged" >autocompleteChanged</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#postItem" >postItem</a>
+                            </li>
+                            <li>
+                                <a href="#upload" >upload</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, itemService: <a href="../injectables/ItemService.html" target="_self">ItemService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, _snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/app/items/post.component.ts:167</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>itemService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ItemService.html" target="_self" >ItemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="autocompleteChanged"></a>
+                    <span class="name">
+                        <span ><b>autocompleteChanged</b></span>
+                        <a href="#autocompleteChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>autocompleteChanged(value: <a href="../interfaces/PlaceSuggestion.html" target="_self">PlaceSuggestion</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">src/app/items/post.component.ts:268</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="../interfaces/PlaceSuggestion.html" target="_self" >PlaceSuggestion</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">src/app/items/post.component.ts:262</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/app/items/post.component.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postItem"></a>
+                    <span class="name">
+                        <span ><b>postItem</b></span>
+                        <a href="#postItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>postItem()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="229"
+                            class="link-to-prism">src/app/items/post.component.ts:229</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="upload"></a>
+                    <span class="name">
+                        <span ><b>upload</b></span>
+                        <a href="#upload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>upload(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="255"
+                            class="link-to-prism">src/app/items/post.component.ts:255</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="address"></a>
+                    <span class="name">
+                        <span ><b>address</b></span>
+                        <a href="#address"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">src/app/items/post.component.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="app_state"></a>
+                    <span class="name">
+                        <span ><b>app_state</b></span>
+                        <a href="#app_state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    _id: &#x27;&#x27;,
+    first_name: &#x27;&#x27;,
+    last_name: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+    phone_number: &#x27;&#x27;,
+    token: &#x27;&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">src/app/items/post.component.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ITEM_TYPE"></a>
+                    <span class="name">
+                        <span ><b>ITEM_TYPE</b></span>
+                        <a href="#ITEM_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+
+    &quot;Electronics&quot;,
+    &quot;Clothing&quot;,
+    &quot;Mobile&quot;,
+    &quot;ID_Card&quot;,
+    &quot;Jewelry&quot;,
+    &quot;Keys&quot;,
+    &quot;Pet&quot;,
+    &quot;Bags&quot;,
+    &quot;Luggage&quot;,
+    &quot;Books&quot;,
+    &quot;Others&quot;,
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/app/items/post.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemAddressFormGroup"></a>
+                    <span class="name">
+                        <span ><b>itemAddressFormGroup</b></span>
+                        <a href="#itemAddressFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.group({
+    address: [&#x27;&#x27;],
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="218" class="link-to-prism">src/app/items/post.component.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemDetailsFormGroup"></a>
+                    <span class="name">
+                        <span ><b>itemDetailsFormGroup</b></span>
+                        <a href="#itemDetailsFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.group({
+    itemType: [&#x27;&#x27;, [Validators.required]],
+    postType: [&#x27;&#x27;, [Validators.required]],
+    description: [&#x27;&#x27;, [Validators.required]],
+    imageUrl: [null, [Validators.required]],
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/app/items/post.component.ts:211</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="items"></a>
+                    <span class="name">
+                        <span ><b>items</b></span>
+                        <a href="#items"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Item.html" target="_self" >Item[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/app/items/post.component.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="POST_TYPE"></a>
+                    <span class="name">
+                        <span ><b>POST_TYPE</b></span>
+                        <a href="#POST_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;LOST&#x27;, &#x27;FOUND&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">src/app/items/post.component.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectFiles"></a>
+                    <span class="name">
+                        <span ><b>selectFiles</b></span>
+                        <a href="#selectFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">src/app/items/post.component.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submit"></a>
+                    <span class="name">
+                        <span ><b>submit</b></span>
+                        <a href="#submit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="191" class="link-to-prism">src/app/items/post.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userInfoFormGroup"></a>
+                    <span class="name">
+                        <span ><b>userInfoFormGroup</b></span>
+                        <a href="#userInfoFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.group({
+    firstName: [&#x27;&#x27;, [Validators.required]],
+    lastName: [&#x27;&#x27;, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required]],
+    phone: [&#x27;&#x27;],
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">src/app/items/post.component.ts:221</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { ItemService } from &#x27;src/app/items/item.service&#x27;;
+import { Item } from &#x27;src/app/items/item.model&#x27;;
+import { PlaceSuggestion } from &#x27;../items/PlaceSuggestion&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import User from &#x27;../user.interface&#x27;;
+import { UserService } from &#x27;../user.service&#x27;;
+@Component({
+  selector: &#x27;app-post&#x27;,
+  template: &#x60;&lt;mat-stepper orientation&#x3D;&quot;vertical&quot; [linear]&#x3D;&quot;true&quot; #stepper&gt;
+    &lt;mat-step [stepControl]&#x3D;&quot;itemDetailsFormGroup&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;itemDetailsFormGroup&quot;&gt;
+        &lt;ng-template matStepLabel&gt;Item Information&lt;/ng-template&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Item Type&lt;/mat-label&gt;
+          &lt;mat-select formControlName&#x3D;&quot;itemType&quot; placeholder&#x3D;&quot;Ex. Dog&quot; required&gt;
+            &lt;mat-option value&#x3D;&quot;Electronics&quot;&gt;Electronics&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Clothing&quot;&gt;Clothing&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Mobile&quot;&gt;Mobile&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;ID_Card&quot;&gt;ID Card&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Jewelry&quot;&gt;Jewelry&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Keys&quot;&gt;Keys&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Pet&quot;&gt;Pet&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Bags&quot;&gt;Bags&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Luggage&quot;&gt;Luggage&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Books&quot;&gt;Books&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;Others&quot;&gt;Others&lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Post Type&lt;/mat-label&gt;
+          &lt;mat-select formControlName&#x3D;&quot;postType&quot; placeholder&#x3D;&quot;Ex. Dog&quot; required&gt;
+            &lt;mat-option value&#x3D;&quot;LOST&quot;&gt;LOST&lt;/mat-option&gt;
+            &lt;mat-option value&#x3D;&quot;FOUND&quot;&gt;FOUND&lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Description&lt;/mat-label&gt;
+          &lt;input
+            matInput
+            placeholder&#x3D;&quot;Ex. I found or lost my item ...&quot;
+            formControlName&#x3D;&quot;description&quot;
+            required
+          /&gt;
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Upload Image&lt;/mat-label&gt;
+          &lt;ngx-mat-file-input
+            formControlName&#x3D;&quot;imageUrl&quot;
+            required
+            (change)&#x3D;&quot;upload($event)&quot;
+            multiple
+          &gt;&lt;/ngx-mat-file-input&gt;
+          &lt;mat-icon matSuffix&gt;upload&lt;/mat-icon&gt;
+        &lt;/mat-form-field&gt;
+        &lt;div&gt;
+          &lt;button mat-raised-button color&#x3D;&quot;primary&quot; matStepperNext&gt;Next&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/mat-step&gt;
+
+    &lt;mat-step [stepControl]&#x3D;&quot;itemAddressFormGroup&quot;&gt;
+      &lt;form&gt;
+        &lt;ng-template matStepLabel&gt;Location of Lost/Found &lt;/ng-template&gt;
+        &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap.gt-lg&#x3D;&quot;16px grid&quot;&gt;
+          &lt;div fxFlex&#x3D;&quot;33%&quot; fxFlex.xs&#x3D;&quot;100%&quot; fxFlex.sm&#x3D;&quot;50%&quot;&gt;
+            &lt;app-autocomplete
+              class&#x3D;&quot;autocomplete&quot;
+              (locationChange)&#x3D;&quot;autocompleteChanged($event)&quot;
+            &gt;&lt;/app-autocomplete&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;button
+            mat-raised-button
+            color&#x3D;&quot;primary&quot;
+            matStepperPrevious
+            class&#x3D;&quot;stepper-btn&quot;
+          &gt;
+            Back
+          &lt;/button&gt;
+          &lt;button
+            mat-raised-button
+            color&#x3D;&quot;primary&quot;
+            matStepperNext
+            class&#x3D;&quot;stepper-btn&quot;
+          &gt;
+            Next
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/mat-step&gt;
+
+    &lt;mat-step&gt;
+      &lt;ng-template matStepLabel&gt;Done&lt;/ng-template&gt;
+      &lt;p&gt;You are almost done, click submit to Finish&lt;/p&gt;
+      &lt;div&gt;
+        &lt;button
+          mat-raised-button
+          color&#x3D;&quot;primary&quot;
+          matStepperPrevious
+          class&#x3D;&quot;stepper-btn&quot;
+        &gt;
+          Back
+        &lt;/button&gt;
+        &lt;button
+          *ngIf&#x3D;&quot;!submit&quot;
+          mat-raised-button
+          (click)&#x3D;&quot;postItem()&quot;
+          color&#x3D;&quot;accent&quot;
+          class&#x3D;&quot;stepper-btn&quot;
+        &gt;
+          Submit
+        &lt;/button&gt;
+        &lt;mat-progress-bar
+          mode&#x3D;&quot;indeterminate&quot;
+          *ngIf&#x3D;&quot;submit&quot;
+        &gt;&lt;/mat-progress-bar&gt;
+      &lt;/div&gt;
+    &lt;/mat-step&gt;
+  &lt;/mat-stepper&gt; &#x60;,
+  styles: [
+    &#x60;
+
+      mat-stepper {
+        display: inline;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: 50px;
+      }
+      mat-radio-group {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      mat-form-field {
+        width: 40%;
+        padding: 10px;
+      }
+      .auto-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .stepper-btn {
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    &#x60;,
+  ],
+})
+export class PostComponent implements OnInit, OnDestroy {
+  app_state: User &#x3D; {
+    _id: &#x27;&#x27;,
+    first_name: &#x27;&#x27;,
+    last_name: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+    phone_number: &#x27;&#x27;,
+    token: &#x27;&#x27;,
+  };
+  constructor(
+    private fb: FormBuilder,
+    private itemService: ItemService,
+    private router: Router,
+    private userService: UserService,
+    private _snackBar: MatSnackBar
+  ) {
+    const stringified_app_state &#x3D; localStorage.getItem(&#x27;APP_STATE&#x27;);
+
+    if (stringified_app_state) {
+      const parsed_app_state &#x3D; JSON.parse(stringified_app_state);
+      this.userService.userState.next(parsed_app_state);
+
+      this.app_state &#x3D; parsed_app_state;
+    }
+  }
+  ngOnInit(): void {
+    this.userService.userState.subscribe((state: User) &#x3D;&gt; {
+      this.app_state &#x3D; state;
+      console.log(this.app_state.email);
+    });
+  }
+
+  submit &#x3D; false;
+  selectFiles &#x3D; &#x27;&#x27;;
+  address &#x3D; &#x27;&#x27;;
+  ITEM_TYPE &#x3D; [
+
+    &quot;Electronics&quot;,
+    &quot;Clothing&quot;,
+    &quot;Mobile&quot;,
+    &quot;ID_Card&quot;,
+    &quot;Jewelry&quot;,
+    &quot;Keys&quot;,
+    &quot;Pet&quot;,
+    &quot;Bags&quot;,
+    &quot;Luggage&quot;,
+    &quot;Books&quot;,
+    &quot;Others&quot;,
+  ]
+
+  POST_TYPE &#x3D; [&#x27;LOST&#x27;, &#x27;FOUND&#x27;];
+
+  itemDetailsFormGroup &#x3D; this.fb.group({
+    itemType: [&#x27;&#x27;, [Validators.required]],
+    postType: [&#x27;&#x27;, [Validators.required]],
+    description: [&#x27;&#x27;, [Validators.required]],
+    imageUrl: [null, [Validators.required]],
+  });
+
+  itemAddressFormGroup &#x3D; this.fb.group({
+    address: [&#x27;&#x27;],
+  });
+  userInfoFormGroup &#x3D; this.fb.group({
+    firstName: [&#x27;&#x27;, [Validators.required]],
+    lastName: [&#x27;&#x27;, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required]],
+    phone: [&#x27;&#x27;],
+  });
+  items: Item[] &#x3D; [];
+
+  postItem() {
+    this.submit &#x3D; true;
+    let item &#x3D; {
+      itemType: this.itemDetailsFormGroup.value.itemType as string,
+      postType: this.itemDetailsFormGroup.value.postType as string,
+      description: this.itemDetailsFormGroup.value.description as string,
+      imageUrl: this.selectFiles,
+      address: this.address,
+      firstName: this.app_state.first_name,
+      lastName: this.app_state.last_name,
+      email: this.app_state.email,
+      phone: this.app_state.phone_number,
+    } as Item;
+
+    this.itemService.postItem(item).subscribe((result) &#x3D;&gt; {
+      this._snackBar.open(&#x27;Item posted successfully &#x27;, &#x27; &#x27;, {
+        duration: 1000,
+      });
+      console.log(item);
+
+      this.submit &#x3D; false;
+      this.router.navigateByUrl(&#x27;/&#x27;);
+
+
+    });
+  }
+  upload(event: any) {
+    const file &#x3D; event.target.files[0];
+    this.selectFiles &#x3D; file.name;
+    return this.itemService.uploadImage(file).subscribe((item) &#x3D;&gt; {
+      console.log(&#x27;File upload success &#x27;);
+    });
+  }
+  ngOnDestroy(): void {
+
+    throw new Error(&#x27;Method not implemented.&#x27;);
+
+  }
+
+  autocompleteChanged(value: PlaceSuggestion) {
+    this.address &#x3D; value.shortAddress;
+    console.log(&#x27;value is changing here&#x27;, this.address);
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-styleData">
+            <pre class="line-numbers"><code class="language-scss">
+
+      mat-stepper {
+        display: inline;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: 50px;
+      }
+      mat-radio-group {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      mat-form-field {
+        width: 40%;
+        padding: 10px;
+      }
+      .auto-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .stepper-btn {
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-stepper orientation="vertical" [linear]="true" #stepper>    <mat-step [stepControl]="itemDetailsFormGroup">      <form [formGroup]="itemDetailsFormGroup">        <ng-template matStepLabel>Item Information</ng-template>        <mat-form-field appearance="fill">          <mat-label>Item Type</mat-label>          <mat-select formControlName="itemType" placeholder="Ex. Dog" required>            <mat-option value="Electronics">Electronics</mat-option>            <mat-option value="Clothing">Clothing</mat-option>            <mat-option value="Mobile">Mobile</mat-option>            <mat-option value="ID_Card">ID Card</mat-option>            <mat-option value="Jewelry">Jewelry</mat-option>            <mat-option value="Keys">Keys</mat-option>            <mat-option value="Pet">Pet</mat-option>            <mat-option value="Bags">Bags</mat-option>            <mat-option value="Luggage">Luggage</mat-option>            <mat-option value="Books">Books</mat-option>            <mat-option value="Others">Others</mat-option>          </mat-select>        </mat-form-field>        <mat-form-field appearance="fill">          <mat-label>Post Type</mat-label>          <mat-select formControlName="postType" placeholder="Ex. Dog" required>            <mat-option value="LOST">LOST</mat-option>            <mat-option value="FOUND">FOUND</mat-option>          </mat-select>        </mat-form-field>        <mat-form-field appearance="fill">          <mat-label>Description</mat-label>          <input            matInput            placeholder="Ex. I found or lost my item ..."            formControlName="description"            required          />        </mat-form-field>        <mat-form-field appearance="fill">          <mat-label>Upload Image</mat-label>          <ngx-mat-file-input            formControlName="imageUrl"            required            (change)="upload($event)"            multiple          ></ngx-mat-file-input>          <mat-icon matSuffix>upload</mat-icon>        </mat-form-field>        <div>          <button mat-raised-button color="primary" matStepperNext>Next</button>        </div>      </form>    </mat-step>    <mat-step [stepControl]="itemAddressFormGroup">      <form>        <ng-template matStepLabel>Location of Lost/Found </ng-template>        <div fxLayout="row wrap" fxLayoutGap.gt-lg="16px grid">          <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%">            <app-autocomplete              class="autocomplete"              (locationChange)="autocompleteChanged($event)"            ></app-autocomplete>          </div>        </div>        <div>          <button            mat-raised-button            color="primary"            matStepperPrevious            class="stepper-btn"          >            Back          </button>          <button            mat-raised-button            color="primary"            matStepperNext            class="stepper-btn"          >            Next          </button>        </div>      </form>    </mat-step>    <mat-step>      <ng-template matStepLabel>Done</ng-template>      <p>You are almost done, click submit to Finish</p>      <div>        <button          mat-raised-button          color="primary"          matStepperPrevious          class="stepper-btn"        >          Back        </button>        <button          *ngIf="!submit"          mat-raised-button          (click)="postItem()"          color="accent"          class="stepper-btn"        >          Submit        </button>        <mat-progress-bar          mode="indeterminate"          *ngIf="submit"        ></mat-progress-bar>      </div>    </mat-step>  </mat-stepper></div>'
+    var COMPONENTS = [{'name': 'AddressAutoCompleteComponent', 'selector': 'app-autocomplete'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ItemComponent', 'selector': 'app-item'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MyItemComponent', 'selector': 'app-item'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PostComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PostComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
